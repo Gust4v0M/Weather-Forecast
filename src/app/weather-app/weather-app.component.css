@@ -1,0 +1,65 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Estilos comuns a todas as larguras */
+.container {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+
+.title{
+    position: relative;
+    text-align: center;
+}
+
+.background {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.house{
+position: relative;
+width: 50%;
+margin-top: auto;
+z-index: 1;
+}
+
+.botton-container{
+    border-style: groove;
+    padding: 185px;
+    width: 100%;
+    position: relative;
+    z-index: 1;    
+}
+
+
+
+/* Estilos específicos para min-width: 1024px */
+@media (min-width: 1024px) {
+    .main {
+        margin: auto;
+        margin-top: 2%;
+    }
+    
+    .container {
+        border-style: solid;
+        padding: 0px;
+        max-width: fit-content;
+        height: fit-content;
+    }
+}
