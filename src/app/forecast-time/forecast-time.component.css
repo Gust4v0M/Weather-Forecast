@@ -1,0 +1,10 @@
+.botton-container{
+    border-style:solid;
+    border-radius: 30px;
+    border-color: rgb(104, 77, 155);
+    width: 47vh;
+    padding-top: 250px;
+    position: relative;
+    z-index: 1;    
+    background-color: rgb(48, 48, 72, 0.9);
+}

@@ -21,6 +21,8 @@
 .title{
     position: relative;
     text-align: center;
+    color: white;
+    margin: 30px;
 }
 
 .background {
@@ -39,15 +41,16 @@ margin-top: auto;
 z-index: 1;
 }
 
-.botton-container{
-    border-style: groove;
-    padding: 185px;
-    width: 100%;
-    position: relative;
-    z-index: 1;    
+.city{
+    font-family:cursive;
+    font-size: 30px;
 }
 
-
+.temperatura{
+    font-family:cursive;
+    font-size:55px;
+    margin-top: 10px;
+}
 
 /* Estilos específicos para min-width: 1024px */
 @media (min-width: 1024px) {
@@ -62,4 +65,23 @@ z-index: 1;
         max-width: fit-content;
         height: fit-content;
     }
+
+    
+.title{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.city{
+    font-family:cursive;
+    font-size: 30px;
+}
+
+.temperatura{
+    font-family:cursive;
+    font-size:55px;
+    margin-top: 20px;
+}
+
 }
