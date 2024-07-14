@@ -1,0 +1,7 @@
+http://api.weatherapi.com/v1/current.json?key=b6cad66055604042a5c35816241207&q={{ campo }}&aqi=no
+
+
+###
+
+POST http://api.weatherapi.com/v1/current.json?key=b6cad66055604042a5c35816241207&q={{ campo }}&aqi=no HTTP/1.1
+Content-Type: : application/json
