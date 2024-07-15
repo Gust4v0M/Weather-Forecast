@@ -1,0 +1,64 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    background-image: linear-gradient(
+    #18213e,
+    #453b91,
+    #963fac);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+img{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: block;
+
+}
+
+.title{
+    position: relative;
+    z-index: 2;
+    margin-bottom: auto;
+    text-align: center;
+    font-size: large;
+    margin-top: 10%;
+}
+h1{
+    color: white;
+    font-size: 8vh;font-weight: bold;
+}
+.DoTempo{
+    color:#d7b226;
+    font-size: 8vh;
+}
+
+button{
+   margin-bottom: auto;
+   z-index: 2;
+   background-color: #DDB130;
+   padding-top: 16px;
+   padding-bottom: 16px;
+   padding-left: 102px;
+   padding-right: 102px; 
+   border-radius: 85px;
+   border-style: none;
+   font-size: 3vh;
+   font-weight: bold;
+   color:#503376 ;
+}
+
+
+
+@media (min-width: 1024px) {
+}
