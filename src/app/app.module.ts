@@ -8,13 +8,15 @@ import { ForecastTimeComponent } from './forecast-time/forecast-time.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { SearchWeatherComponent } from './search-weather/search-weather.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherAppComponent,
     ForecastTimeComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    SearchWeatherComponent
   ],
   imports: [
     BrowserModule,

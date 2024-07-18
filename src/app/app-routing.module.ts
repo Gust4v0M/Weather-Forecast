@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { SearchWeatherComponent } from './search-weather/search-weather.component';
 
 const routes: Routes = [
   {path: '', component: WelcomePageComponent},
-  //{ path: 'goWeather', component:  }
+  { path: 'searchWeather', component: SearchWeatherComponent }
 
 ];
 

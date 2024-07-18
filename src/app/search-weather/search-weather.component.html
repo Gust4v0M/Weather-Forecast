@@ -1,0 +1,27 @@
+<div class="main">
+  <div class="container">
+    <h1>Clima</h1>
+
+    <div class="container-wrapper"></div>
+    <input
+      [formControl]="input"
+      (click)="onClicSearch()"
+      class="searchCity"
+      type="text"
+      placeholder="  Pesquise por um país ou cidade"
+    />
+
+    <tbody *ngIf="mostrarTempo">
+      <tr>
+        
+        <td></td>
+      </tr>
+    </tbody>
+
+    <div *ngIf="!mostrarTempo" class="exemplos">
+      <img src="assets/rectangle.png" alt="" />
+      <img src="assets/rectangle.png" alt="" />
+      <img src="assets/rectangle.png" alt="" />
+    </div>
+  </div>
+</div>
