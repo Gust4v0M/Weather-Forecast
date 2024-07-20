@@ -10,11 +10,11 @@
       type="text"
       placeholder="  Pesquise por um país ou cidade"
     />
+    <button class="btn btn-primary" (click)="onSearch()">Pesquisar</button>
 
     <tbody *ngIf="mostrarTempo">
-      <tr>
-        
-        <td></td>
+      <tr *ngFor="let result of results$| async">        
+        <td [style.color]="'white'"> {{ result.nome }}</td>
       </tr>
     </tbody>
 
