@@ -19,5 +19,8 @@ export class WeatherAppService {
     return this.http.get(apiUrl);
   }
 
-  
+  getCity(res: Observable<any[]>){
+    return res
+  }
+
 }

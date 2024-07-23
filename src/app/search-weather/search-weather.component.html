@@ -10,15 +10,24 @@
       type="text"
       placeholder="  Pesquise por um país ou cidade"
     />
-    <table class="table table-striped table-dark custom-table" *ngIf="mostrarTempo">
+    <table
+      class="table table-striped table-dark custom-table"
+      *ngIf="mostrarTempo"
+    >
       <thead>
         <tr>
           <th scope="col">Municípios</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let result of results$ | async">
-          <td routerLink="/weather-app" [style.color]="'white'">{{ result.nome }}</td>          
+        <tr
+          *ngFor="let result of results$ | async"
+          onclick="selectCity(result.nome)">
+          <td 
+          [routerLink]="'/weather-app'"
+          [style.color]="'white'">
+            {{ result.nome }}
+          </td>
         </tr>
       </tbody>
     </table>

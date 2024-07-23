@@ -2,13 +2,15 @@
   <div class="container">
     <div class="header">
       <h2 class="city">{{ city }} </h2>
-      <h3 class="temperatura">{{ temp }}</h3>
+      <h3 class="temperatura  [resultsCity]='city'">{{ temp }}</h3>
     </div>
 
     <img class="background" src="assets/background-img.png" alt=""> 
     <img class="house"  src="assets/house.png" alt="">
 
     <footer style="width: max-content;">
+
+      
 
       <app-forecast-time></app-forecast-time>
  

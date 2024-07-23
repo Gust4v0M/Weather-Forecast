@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { WeatherAppService } from './weather-app.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-weather-app',
@@ -7,8 +8,10 @@ import { WeatherAppService } from './weather-app.service';
   styleUrl: './weather-app.component.css',
 })
 export class WeatherAppComponent implements OnInit {
-  city: string = 'sao paulo';
+  @Input() city: string = '';
   temp!: any;
+
+  
 
   constructor(private service: WeatherAppService) {}
 
@@ -16,6 +19,7 @@ export class WeatherAppComponent implements OnInit {
     this.service
       .currentWeather(this.city)
       .subscribe((dados) => this.populaDados(dados));
+
   }
 
   populaDados(dados: any) {
@@ -25,4 +29,6 @@ export class WeatherAppComponent implements OnInit {
       console.error('Dados inválidos recebidos da API', dados);
     }
   }
+
+
 }
