@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { WeatherAppService } from './weather-app.service';
 import { Observable } from 'rxjs';
 
@@ -7,19 +7,19 @@ import { Observable } from 'rxjs';
   templateUrl: './weather-app.component.html',
   styleUrl: './weather-app.component.css',
 })
-export class WeatherAppComponent implements OnInit {
-  @Input() city: string = '';
+export class WeatherAppComponent implements OnChanges {
+  @Input() city: string= ''
   temp!: any;
 
   
 
   constructor(private service: WeatherAppService) {}
 
-  ngOnInit() {
+  ngOnChanges() {
     this.service
       .currentWeather(this.city)
       .subscribe((dados) => this.populaDados(dados));
-
+    console.log(this.city)
   }
 
   populaDados(dados: any) {
