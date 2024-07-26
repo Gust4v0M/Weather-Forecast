@@ -7,15 +7,15 @@ import { Observable } from 'rxjs';
   templateUrl: './weather-app.component.html',
   styleUrl: './weather-app.component.css',
 })
-export class WeatherAppComponent implements OnChanges {
-  @Input() city: string= ''
+export class WeatherAppComponent implements OnInit {
+  @Input() city!: string;
   temp!: any;
 
   
 
   constructor(private service: WeatherAppService) {}
 
-  ngOnChanges() {
+  ngOnInit() {
     this.service
       .currentWeather(this.city)
       .subscribe((dados) => this.populaDados(dados));

@@ -12,10 +12,10 @@ import { SearchWeatherComponent } from './search-weather/search-weather.componen
 
 @NgModule({
   declarations: [
+    WelcomePageComponent,
     AppComponent,
     WeatherAppComponent,
     ForecastTimeComponent,
-    WelcomePageComponent,
     SearchWeatherComponent
   ],
   imports: [
