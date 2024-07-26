@@ -11,23 +11,21 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { SearchWeatherComponent } from './search-weather/search-weather.component';
 
 @NgModule({
-  declarations: [
-    WelcomePageComponent,
-    AppComponent,
-    WeatherAppComponent,
-    ForecastTimeComponent,
-    SearchWeatherComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule,
+        WelcomePageComponent,
+        WeatherAppComponent,
+        ForecastTimeComponent,
+        SearchWeatherComponent
+    ],
+    providers: [
+        provideClientHydration()
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

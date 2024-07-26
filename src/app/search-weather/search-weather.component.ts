@@ -7,7 +7,7 @@ import {
   ViewChild,
   viewChild,
 } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {
   debounce,
   debounceTime,
@@ -19,11 +19,23 @@ import {
   tap,
 } from 'rxjs';
 import { WeatherAppService } from '../weather-app/weather-app.service';
+import { WeatherAppComponent } from '../weather-app/weather-app.component';
+import { RouterLink } from '@angular/router';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-search-weather',
-  templateUrl: './search-weather.component.html',
-  styleUrl: './search-weather.component.css',
+    selector: 'app-search-weather',
+    templateUrl: './search-weather.component.html',
+    styleUrl: './search-weather.component.css',
+    standalone: true,
+    imports: [
+        ReactiveFormsModule,
+        NgIf,
+        NgFor,
+        RouterLink,
+        WeatherAppComponent,
+        AsyncPipe,
+    ],
 })
 export class SearchWeatherComponent implements OnInit {
  input = new FormControl();
