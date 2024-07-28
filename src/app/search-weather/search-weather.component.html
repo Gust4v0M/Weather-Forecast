@@ -23,7 +23,7 @@
         <tr *ngFor="let result of results$ | async">
           <td [style.color]="'white'"
            (click)="selectCity(result.nome)"
-           [routerLink]="'/weather-app'"
+           [routerLink]="['/weather-app', result.nome ]"
            > 
             {{ result.nome }}
           </td>
@@ -37,5 +37,5 @@
       <img src="assets/rectangle.png" alt="" />
     </div>
   </div>
-  <app-weather-app [city]="cidadeRelampago" [style.display]="'none'"></app-weather-app>
+  <app-weather-app *ngIf="!mostrarTempo"></app-weather-app>
 </div>

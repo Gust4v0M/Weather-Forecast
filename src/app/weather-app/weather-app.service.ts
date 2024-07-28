@@ -9,13 +9,19 @@ export class WeatherAppService {
 
   
 
-  private readonly API = 'http://api.weatherapi.com/v1/current.json?key=b6cad66055604042a5c35816241207&q=';
+  private readonly APICU = 'http://api.weatherapi.com/v1/current.json?key=b6cad66055604042a5c35816241207&lang=pt&q=';
+  private readonly APIFOR = 'http://api.weatherapi.com/v1/forecast.json?key=b6cad66055604042a5c35816241207&q='
 
   
   constructor(private http: HttpClient) { }
 
   currentWeather(value: string): Observable<any>{
-    const apiUrl = `${this.API}${value}&aqi=no`
+    const apiUrl = `${this.APICU}${value}&aqi=no`;
+    return this.http.get(apiUrl);
+  }
+
+  currentForecast(value: string): Observable<any>{
+    const apiUrl = `${this.APIFOR}${value}&days=1&aqi=no&alerts=no`;
     return this.http.get(apiUrl);
   }
 

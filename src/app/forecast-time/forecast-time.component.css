@@ -3,8 +3,10 @@
     border-radius: 30px;
     border-color: rgb(104, 77, 155);
     width: 47vh;
-    padding-top: 250px;
+    padding-top: 380px;
     position: relative;
     z-index: 1;    
-    background-color: rgb(48, 48, 72, 0.9);
+    background-image: linear-gradient(
+        rgba(71, 66, 112, 0.95),
+        rgba(44, 39, 78, 0.95));
 }

@@ -1,8 +1,10 @@
 <div class="main">
   <div class="container">
     <div class="header">
-      <h2 class="city">{{ city }} </h2>
-      <h3 class="temperatura  [resultsCity]='city'">{{ temp }}</h3>
+      <h1 class="display-1">{{ city }} </h1>
+      <h1 class="display-2  [resultsCity]='city'">{{ temp + '°' }} </h1>
+      <h1 class="display-5"> {{ sensacao }}</h1> 
+      <p class="max"> {{ "Max: "+ max + "° "  }}</p> <p class="min"> {{ " Min: " + min + "° " }} </p>
     </div>
 
     <img class="background" src="assets/background-img.png" alt=""> 

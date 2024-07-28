@@ -1,7 +1,8 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { WeatherAppService } from './weather-app.service';
 import { Observable } from 'rxjs';
 import { ForecastTimeComponent } from '../forecast-time/forecast-time.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-weather-app',
@@ -11,18 +12,46 @@ import { ForecastTimeComponent } from '../forecast-time/forecast-time.component'
     imports: [ForecastTimeComponent],
 })
 export class WeatherAppComponent implements OnInit {
-  @Input() city!: string;
-  temp!: any;
+  city!: string;
+  temp!: any;  
+  sensacao!: string;
+  max!: string;
+  min!: string;
 
+  constructor(private service: WeatherAppService,
+              private route : ActivatedRoute
+  ) {}
+
+  ngOnInit(){
+    this.route.params
+    .subscribe(params => {
+      this.city = params['city'];
+      this.carregaTempo();
+      this.carregaPrevisao();
+    });
+  }
   
-
-  constructor(private service: WeatherAppService) {}
-
-  ngOnInit() {
-    this.service
+  carregaTempo() {
+    if(this.city){
+      this.service
       .currentWeather(this.city)
-      .subscribe((dados) => this.populaDados(dados));
-    console.log(this.city)
+      .subscribe((dados) => {
+        this.populaDados(dados),
+        this.sensacaoTermica(dados),
+      (error: any) => console.error('error ao buscar clima', error)});
+    }
+    console.log('City in ngOnChanges:', this.city);
+  }
+
+  carregaPrevisao(){
+    if(this.city){
+      this.service
+      .currentForecast(this.city)
+      .subscribe((dados) =>{
+        this.MaxMinTemp(dados),
+        (error: any) => console.error('deu ruim na previsão', error)})
+    }
+   
   }
 
   populaDados(dados: any) {
@@ -33,5 +62,16 @@ export class WeatherAppComponent implements OnInit {
     }
   }
 
+  sensacaoTermica(dados: any){
+    this.sensacao = dados.current.condition.text;
+   
+  }
+  MaxMinTemp(dados: any){
 
+    const forecastDay = dados.forecast.forecastday[0];
+    if(forecastDay && forecastDay.day){
+      this.max = forecastDay.day.maxtemp_c;
+      this.min = forecastDay.day.mintemp_c;
+    }
+  }
 }
