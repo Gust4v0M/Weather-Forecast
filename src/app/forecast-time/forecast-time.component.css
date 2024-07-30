@@ -3,10 +3,37 @@
     border-radius: 30px;
     border-color: rgb(104, 77, 155);
     width: 47vh;
-    padding-top: 380px;
+    padding-bottom: 380px;
     position: relative;
     z-index: 1;    
     background-image: linear-gradient(
         rgba(71, 66, 112, 0.95),
         rgba(44, 39, 78, 0.95));
 }
+header{
+    display: flex;
+    justify-content: space-evenly;
+}
+h5{
+    padding-top: 10px;
+    z-index: 2;
+    display: inline;
+    font-size: small;
+    color:#ad8bb5;
+}
+
+.linha-horizontal{
+    width: 100%;
+    border-bottom: 1px solid #f1e6ff;
+}
+
+.mini-container{
+    display: flex;
+    border-radius: 100px;
+    padding-bottom: 20px;
+    width: 45px;
+    background-color: #373b6c;
+    flex-direction: column;
+    
+}
+
