@@ -2,19 +2,18 @@
   <header>
     <h5 class="hora">Previsão por hora</h5>
     <h5 class="semana">previsão por semana</h5>
-    <br/>
+    <br />
   </header>
   <div class="linha-horizontal"></div>
-  <br>
-  <body>
-    <div>
-      <ul>
-        <li class="mini-container">
-          <p>2 PM</p>
-          <img src="" alt=""> 
-          <p class="temperatura"> 20°</p>
-        </li>
-      </ul>
-    </div>
-  </body>
+  <br />
+
+  <div>
+    <ul *ngFor="let tempo of time">
+      <li class="mini-container" >
+        <p>{{ tempo + "PM" }}</p>
+        <img [src]="img" alt="" />
+        <p class="temperatura">20°</p>
+      </li>
+    </ul>
+  </div>
 </div>

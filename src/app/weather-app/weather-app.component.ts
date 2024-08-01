@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
     imports: [ForecastTimeComponent],
 })
 export class WeatherAppComponent implements OnInit {
-  city!: string;
+city!: string;
   temp!: any;  
   sensacao!: string;
   max!: string;

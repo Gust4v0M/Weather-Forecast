@@ -1,3 +1,8 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 .botton-container{
     border-style:solid;
     border-radius: 30px;
@@ -27,13 +32,30 @@ h5{
     border-bottom: 1px solid #f1e6ff;
 }
 
-.mini-container{
+ul{
     display: flex;
-    border-radius: 100px;
-    padding-bottom: 20px;
-    width: 45px;
-    background-color: #373b6c;
-    flex-direction: column;
-    
+    flex-direction: row;
+    align-items: center;
 }
 
+.mini-container{    
+    border-radius: 100px;
+     border: 1px, solid, #ad8bb5;
+    box-shadow: 2px 2px 0px 0px rgba(39, 39, 39, 0.8);;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 45px;
+    background-image: linear-gradient(
+     rgb(92, 71, 145),
+     rgb(63, 46, 116));
+    margin: 15px;   
+}
+
+p{
+    color: white;
+}
+
+
+img{
+    width: 100%;
+}
