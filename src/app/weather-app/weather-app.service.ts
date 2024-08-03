@@ -16,12 +16,12 @@ export class WeatherAppService {
   constructor(private http: HttpClient) { }
 
   currentWeather(value: string): Observable<any>{
-    const apiUrl = `${this.APICU}${value}&aqi=no`;
+    const apiUrl = `${this.APICU}${value}&days=5&aqi=no`;
     return this.http.get(apiUrl);
   }
 
   currentForecast(value: string): Observable<any>{
-    const apiUrl = `${this.APIFOR}${value}&days=1&aqi=no&alerts=no`;
+    const apiUrl = `${this.APIFOR}${value}&days=7&aqi=no&alerts=no`;
     return this.http.get(apiUrl);
   }
 

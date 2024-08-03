@@ -45,7 +45,8 @@ export class SearchWeatherComponent implements OnInit {
 
   results$!: Observable<any[]>;
   mostrarTempo: boolean = false;
-cidadeRelampago: string = '';
+  cidadeRelampago: string = '';
+  mostrarComponent: boolean = false;
 
   constructor(private http: HttpClient, 
 ) {}

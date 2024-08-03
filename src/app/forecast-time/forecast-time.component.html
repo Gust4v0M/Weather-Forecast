@@ -8,11 +8,11 @@
   <br />
 
   <div>
-    <ul *ngFor="let tempo of time">
-      <li class="mini-container" >
-        <p>{{ tempo + "PM" }}</p>
+    <ul>  
+      <li class="mini-container" *ngFor="let day of dailyForecast">
+        <p>{{ formatDateTime(day.date) }}</p>
         <img [src]="img" alt="" />
-        <p class="temperatura">20°</p>
+        <p class="temperatura">{{ day.avgTempC + '°' }}</p>
       </li>
     </ul>
   </div>
