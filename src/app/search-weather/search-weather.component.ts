@@ -22,6 +22,7 @@ import { WeatherAppService } from '../weather-app/weather-app.service';
 import { WeatherAppComponent } from '../weather-app/weather-app.component';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { subscribe } from 'node:diagnostics_channel';
 
 @Component({
     selector: 'app-search-weather',
@@ -47,6 +48,13 @@ export class SearchWeatherComponent implements OnInit {
   mostrarTempo: boolean = false;
   cidadeRelampago: string = '';
   mostrarComponent: boolean = false;
+  private readonly mun1: string = 'http://api.weatherapi.com/v1/current.json?key=b6cad66055604042a5c35816241207&lang=pt&q=manaus&days=5&aqi=no';
+  private readonly mun2: string = 'http://api.weatherapi.com/v1/current.json?key=b6cad66055604042a5c35816241207&lang=pt&q=salvador&days=5&aqi=no';
+  private readonly mun3: string = 'http://api.weatherapi.com/v1/current.json?key=b6cad66055604042a5c35816241207&lang=pt&q=macapa&days=5&aqi=no';
+  mainTemp!: number;
+  icon!: any;
+  maxTemp!: number;
+  minTemp!: number;
 
   constructor(private http: HttpClient, 
 ) {}
@@ -69,6 +77,7 @@ export class SearchWeatherComponent implements OnInit {
       )
     );
 
+
   }
 
   onClicSearch() {
@@ -81,5 +90,18 @@ export class SearchWeatherComponent implements OnInit {
   selectCity(city: string){
     this.cidadeRelampago = city;
     console.log(this.cidadeRelampago)
+  }
+
+  container1(){
+      this.http.get(this.mun1)
+      .subscribe(
+        (dados: any) =>{
+          this.mainTemp = dados.current.temp_c;
+          this.maxTemp =  dados.forecast.forecastday[0].day.maxtemp_c;
+          this.minTemp = dados.forecast.forecastday[0].day.mintemp_c;
+          this.icon = dados.forecast.forecastday.dau.condition.icon;
+        }
+
+      )
   }
 }

@@ -21,21 +21,56 @@
       </thead>
       <tbody>
         <tr *ngFor="let result of results$ | async">
-          <td [style.color]="'white'"
-           (click)="selectCity(result.nome)"
-           [routerLink]="['/weather-app', result.nome ]"
-           > 
+          <td
+            [style.color]="'white'"
+            (click)="selectCity(result.nome)"
+            [routerLink]="['/weather-app', result.nome]"
+          >
             {{ result.nome }}
           </td>
         </tr>
       </tbody>
     </table>
 
-    <div *ngIf="!mostrarTempo" class="exemplos">
-      <img src="assets/rectangle.png" alt="" />
-      <img src="assets/rectangle.png" alt="" />
-      <img src="assets/rectangle.png" alt="" />
-    </div>
+    <ul *ngIf="!mostrarTempo" class="exemplos">
+      <li class="infoContainer1">
+        <div class="header1">
+          <p class="mainTemp">77{{ maxTemp }}</p>
+          <img class="icon" [src]="icon" />
+        </div>
+        <div class="body">
+          <p>{{ "Max:" + maxTemp + "°" + "Min:" + minTemp + "°" }}</p>
+          <p>alto da compadecida</p>
+        </div>
+        <img src="assets/rectangle.png" alt="" />
+      </li>
+
+      <li class="infoContainer2">
+        <div class="header2">
+          <p class="mainTemp">77{{ maxTemp }}</p>
+          <img class="icon" [src]="icon" />
+        </div>
+        <div class="body">
+          <p>{{ "Max:" + maxTemp + "°" + "Min:" + minTemp + "°" }}</p>
+          <p>alto da compadecida</p>
+        </div>
+        <img src="assets/rectangle.png" alt="" />
+      </li>
+
+
+     <li class="infoContainer3">
+        <div class="header3">
+          <p class="mainTemp">55{{ maxTemp }}</p>
+          <img class="icon" [src]="icon" />
+        </div>
+        <div class="body">
+          <p>{{ "Max:" + maxTemp + "°" + "Min:" + minTemp + "°" }}</p>
+          <p>alto da compadecida</p>
+        </div>
+        <img src="assets/rectangle.png" alt="" />
+      </li>
+
+    </ul>
   </div>
   <app-weather-app *ngIf="mostrarComponent"></app-weather-app>
 </div>

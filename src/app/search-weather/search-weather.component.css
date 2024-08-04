@@ -42,7 +42,7 @@ h1{
     justify-content: center;
     align-content: space-around; 
     flex-direction: column;
-
+    position: relative;
 }
 
 img{
@@ -57,6 +57,48 @@ img{
     width: 95%;
   }
   
+.header1 {
+    position: absolute; 
+    z-index: 2; 
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+.header2 {
+  position: absolute; 
+  z-index: 2; 
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.header3 {
+  position: absolute; 
+  z-index: 2; 
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.body{
+  position: absolute; 
+  z-index: 2; 
+  margin-top: 17vh;
+  margin-left: 15px;
+}
+
+.icon{
+  margin-left: 30vh;
+  position: absolute; 
+  padding-top: 20px;
+  background-color: aliceblue;
+
+ 
+}
+.mainTemp{
+  font-size: 50px;
+  color: white;
+  margin-left: 15px;
+}
   .custom-table thead tr:first-child th:first-child {
     border-top-left-radius: 10px;
   }
