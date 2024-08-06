@@ -34,42 +34,80 @@
 
     <ul *ngIf="!mostrarTempo" class="exemplos">
       <li class="infoContainer1">
-        <div class="header1">
-          <p class="mainTemp">77{{ maxTemp }}</p>
-          <img class="icon" [src]="icon" />
+        <div class="header">
+          <p class="mainTemp">{{ citysData["manaus"].current.temp_c }}</p>
+          <img
+            class="icon"
+            [src]="citysData['manaus'].current.condition.icon"
+          />
         </div>
         <div class="body">
-          <p>{{ "Max:" + maxTemp + "°" + "Min:" + minTemp + "°" }}</p>
-          <p>alto da compadecida</p>
+          <p class="condition">{{ citysData["manaus"].current.condition.text }}</p>
+          <p class="maxMin">
+            {{
+              "Max:" +
+                forCityData["manaus"].forecast.forecastday[0].day.maxtemp_c +
+                "°" +
+                "Min:" +
+                forCityData["manaus"].forecast.forecastday[0].day.mintemp_c +
+                "°"
+            }}
+          </p>
+          <p class="city">Manaus, Amazonas</p>
         </div>
         <img src="assets/rectangle.png" alt="" />
       </li>
 
       <li class="infoContainer2">
-        <div class="header2">
-          <p class="mainTemp">77{{ maxTemp }}</p>
-          <img class="icon" [src]="icon" />
+        <div class="header">
+          <p class="mainTemp">{{ citysData["salvador"].current.temp_c }}</p>
+          <img
+            class="icon"
+            [src]="citysData['salvador'].current.condition.icon"
+          />
         </div>
         <div class="body">
-          <p>{{ "Max:" + maxTemp + "°" + "Min:" + minTemp + "°" }}</p>
-          <p>alto da compadecida</p>
+          <p class="condition">{{ citysData["salvador"].current.condition.text }}</p>
+          <p class="maxMin">
+            {{
+              "Max:" +
+                forCityData["salvador"].forecast.forecastday[0].day.maxtemp_c +
+                "°" +
+                "Min:" +
+                forCityData["salvador"].forecast.forecastday[0].day.mintemp_c +
+                "°"
+            }}
+          </p>
+          <p class="city">Salvador, Bahia</p>
         </div>
         <img src="assets/rectangle.png" alt="" />
       </li>
 
-
-     <li class="infoContainer3">
-        <div class="header3">
-          <p class="mainTemp">55{{ maxTemp }}</p>
-          <img class="icon" [src]="icon" />
+      <li class="infoContainer3">
+        <div class="header">
+          <p class="mainTemp">{{ citysData["macapa"].current.temp_c }}</p>
+          <img
+            class="icon"
+            [src]="citysData['macapa'].current.condition.icon"
+          />
         </div>
         <div class="body">
-          <p>{{ "Max:" + maxTemp + "°" + "Min:" + minTemp + "°" }}</p>
-          <p>alto da compadecida</p>
+          
+        <p class="condition">{{ citysData["macapa"].current.condition.text }}</p>
+          <p class="maxMin">
+            {{
+              "Max:" +
+                forCityData["manaus"].forecast.forecastday[0].day.maxtemp_c +
+                "°" +
+                "Min:" +
+                forCityData["manaus"].forecast.forecastday[0].day.mintemp_c +
+                "°"
+            }}
+          </p>
+          <p class="city">Macapá, Amapá</p>
         </div>
         <img src="assets/rectangle.png" alt="" />
       </li>
-
     </ul>
   </div>
   <app-weather-app *ngIf="mostrarComponent"></app-weather-app>

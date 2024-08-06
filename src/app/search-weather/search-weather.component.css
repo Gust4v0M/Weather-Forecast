@@ -57,47 +57,48 @@ img{
     width: 95%;
   }
   
-.header1 {
+.header {
     position: absolute; 
     z-index: 2; 
     margin-top: 50px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
 }
-.header2 {
-  position: absolute; 
-  z-index: 2; 
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-}
-.header3 {
-  position: absolute; 
-  z-index: 2; 
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-}
+
 
 .body{
   position: absolute; 
   z-index: 2; 
-  margin-top: 17vh;
+  margin-top: 15vh;
   margin-left: 15px;
 }
 
 .icon{
-  margin-left: 30vh;
+  margin-left: 26vh;
+  margin-top: -2vh;
   position: absolute; 
-  padding-top: 20px;
-  background-color: aliceblue;
+   width: 100%;
+ }
 
- 
-}
 .mainTemp{
   font-size: 50px;
   color: white;
   margin-left: 15px;
+}
+.maxMin{
+  color: #9198c1;
+  font-weight: bolder;
+  font-size: smaller;
+}
+
+.condition{
+  margin-left: 27vh;
+  color: white;
+  font-size: small;
+}
+.city{
+color: white;
 }
   .custom-table thead tr:first-child th:first-child {
     border-top-left-radius: 10px;

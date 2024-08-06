@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class WeatherAppService {
   private readonly APICU = 'http://api.weatherapi.com/v1/current.json?key=b6cad66055604042a5c35816241207&lang=pt&q=';
   private readonly APIFOR = 'http://api.weatherapi.com/v1/forecast.json?key=b6cad66055604042a5c35816241207&q='
 
-  
+ 
   constructor(private http: HttpClient) { }
 
   currentWeather(value: string): Observable<any>{
@@ -28,5 +28,6 @@ export class WeatherAppService {
   getCity(res: Observable<any[]>){
     return res
   }
+
 
 }
