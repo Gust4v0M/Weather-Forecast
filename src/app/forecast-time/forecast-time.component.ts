@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { WeatherAppService } from '../weather-app/weather-app.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { WeatherAppComponent } from '../weather-app/weather-app.component';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './forecast-time.component.html',
   styleUrl: './forecast-time.component.css',
   standalone: true,
-  imports: [WeatherAppComponent, CommonModule],
+  imports: [WeatherAppComponent, CommonModule, RouterLink],
 })
 export class ForecastTimeComponent implements OnInit {
   @Input() city!: string;
@@ -30,9 +30,9 @@ export class ForecastTimeComponent implements OnInit {
     this.service.currentForecast(this.city)
       .subscribe((data: any) => { 
         this.dailyForecast = data.forecast.forecastday.map((day: any) => ({
-          date: day.date,
-          avgTempC: day.day.avgtemp_c,
-          conditionIcon: day.day.condition.icon
+          date: day.hour[0].time,
+          avgTempC: day.hour[0].temp_c,
+          conditionIcon: day.hour[0].condition.icon
         }));
       });
   }

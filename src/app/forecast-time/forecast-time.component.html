@@ -1,19 +1,21 @@
 <div class="botton-container">
   <header>
-    <h5 class="hora">Previsão por hora</h5>
-    <h5 class="semana">previsão por semana</h5>
+    <h5 class="semana">previsão da semana</h5>
     <br />
   </header>
   <div class="linha-horizontal"></div>
   <br />
 
   <div>
-    <ul>  
+    <ul>
       <li class="mini-container" *ngFor="let day of dailyForecast">
         <p>{{ formatDateTime(day.date) }}</p>
-        <img [src]="img" alt="" />
-        <p class="temperatura">{{ day.avgTempC + '°' }}</p>
+        <img [src]="day.conditionIcon" alt="" />
+        <p class="temperatura">{{ day.avgTempC + "°" }}</p>
       </li>
     </ul>
   </div>
+  <footer>
+    <div class="new-location" routerLink="/searchWeather"><p class="plus">+</p></div>
+  </footer>
 </div>
