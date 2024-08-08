@@ -69,34 +69,32 @@ p{
 
 /* Estilos específicos para min-width: 1024px */
 @media (min-width: 1024px) {
-    .main {
-        margin: auto;
-        margin-top: 2%;
+    .container{
+        margin-top: 20px;
+        height: 95vh; 
+        border-radius: 20px;
+        max-width: 430px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        overflow: none;
     }
-    
-    .container {
-        border-style: solid;
-        padding: 0px;
-        max-width: fit-content;
-        height: fit-content;
+    .house{
+height: 45%;
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header{
+        position: relative;
+        text-align: center;
+        color: white;
+        margin: 30px;
+        margin-top: 10%;
     }
 
+ .background{
+    height: 105vh;
+ }
     
-.header{
-    position: relative;
-    text-align: center;
-    color: white;
-}
-
-.city{
-    font-family:cursive;
-    font-size: 30px;
-}
-
-.temperatura{
-    font-family:cursive;
-    font-size:55px;
-    margin-top: 20px;
-}
-
-}
+    }

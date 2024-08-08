@@ -3,3 +3,12 @@
     margin: 0px;
     padding: 0px;
 }
+
+body{
+    background-image: linear-gradient(
+        rgb(152, 119, 223),
+        rgb(221, 161, 231));    
+        height: 100vh;
+
+
+}

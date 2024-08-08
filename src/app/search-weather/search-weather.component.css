@@ -44,6 +44,9 @@ h1{
     flex-direction: column;
     position: relative;
 }
+li{
+  list-style: none;
+}
 
 img{
     margin-top: 40px;
@@ -116,4 +119,19 @@ color: white;
     border-bottom-right-radius: 10px;
   }
 
-@media (min-width: 1024px) {}
+  @media (min-width: 1024px) {
+    .container{
+      margin-top: 20px;
+      height: 95vh; 
+      border-radius: 20px;
+      max-width: 400px;
+      overflow:auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    }
