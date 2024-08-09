@@ -9,8 +9,8 @@ export class WeatherAppService {
 
   
 
-  private readonly APICU = 'http://api.weatherapi.com/v1/current.json?key=b6cad66055604042a5c35816241207&lang=pt&q=';
-  private readonly APIFOR = 'http://api.weatherapi.com/v1/forecast.json?key=b6cad66055604042a5c35816241207&q='
+  private readonly APICU = 'https://api.weatherapi.com/v1/current.json?key=b6cad66055604042a5c35816241207&lang=pt&q=';
+  private readonly APIFOR = 'https://api.weatherapi.com/v1/forecast.json?key=b6cad66055604042a5c35816241207&q='
 
  
   constructor(private http: HttpClient) { }
